@@ -14,4 +14,4 @@ else:
     if isOkay:
         print Solver.Solver.solve_this(input_read.read_input(sys.argv[1], size))
     else:
-        print " program zakonczyl dzialanie"
+        print " program zakonczyl dzialanie, bez obliczania"
