@@ -2,23 +2,28 @@ import wx
 import wx.lib.agw.speedmeter as SM
 import time
 import wx.gizmos as gizmos
+from airplane_simulator import Plane
 
 
 class MyFrame(wx.Frame):
 
-    def __init__(self, parent):
+    def __init__(self, parent, saver):
         pi = 3.1415
+        self.start_flight_time = 0
         wx.Frame.__init__(self, parent, -1, "Flight Recorder", size=(800, 600))
-
-        panel1 = wx.Panel(self, -1, style=wx.SUNKEN_BORDER, size=(400, 300))
-        panel2 = wx.Panel(self, -1, style=wx.SUNKEN_BORDER, pos=(400, 0), size=(400, 300))
-        panel1.SetBackgroundColour("LIGHT GREY")
-        panel2.SetBackgroundColour("LIGHT GREY")
+        #tworzy "layout" programu
+        self.panel1 = wx.Panel(self, -1, style=wx.SUNKEN_BORDER, size=(400, 300))
+        self.panel2 = wx.Panel(self, -1, style=wx.SUNKEN_BORDER, pos=(400, 0), size=(400, 300))
+        self.panel3 = wx.Panel(self, -1, style=wx.SUNKEN_BORDER, pos=(0, 300), size=(400, 300))
+        self.panel1.SetBackgroundColour("LIGHT GREY")
+        self.panel2.SetBackgroundColour("LIGHT GREY")
+        self.panel3.SetBackgroundColour("LIGHT GREY")
         box = wx.BoxSizer(wx.VERTICAL)
-        box.Add(panel1, 2, wx.EXPAND)
-        box.Add(panel2, 1, wx.EXPAND)
-        self.speed = SM.SpeedMeter(panel2, agwStyle=SM.SM_DRAW_HAND|SM.SM_DRAW_SECTORS|SM.SM_DRAW_MIDDLE_TEXT|
-                                                  SM.SM_DRAW_SECONDARY_TICKS, pos=(0, 30), size=(400, 300))
+        box.Add(self.panel1, 2, wx.EXPAND)
+        box.Add(self.panel2, 1, wx.EXPAND)
+        #predkosciomierz
+        self.speed = SM.SpeedMeter(self.panel2, agwStyle=SM.SM_DRAW_HAND|SM.SM_DRAW_SECTORS|SM.SM_DRAW_MIDDLE_TEXT|
+                                                    SM.SM_DRAW_SECONDARY_TICKS, pos=(0, 30), size=(400, 300))
 
         # Set The Region Of Existence Of SpeedMeter (Always In Radians!!!!)
         self.speed.SetAngleRange(-pi/6, 7*pi/6)
@@ -61,31 +66,125 @@ class MyFrame(wx.Frame):
         # Set The Current Value For The SpeedMeter
         self.speed.SetSpeedValue(1)
 
-        self.led = gizmos.LEDNumberCtrl(panel1, -1, pos=(0, 100), size=(350, 80), style=gizmos.LED_ALIGN_LEFT)
+        #wysokosciomierz
+        self.alt = SM.SpeedMeter(self.panel3, agwStyle=SM.SM_DRAW_HAND|SM.SM_DRAW_SECTORS|SM.SM_DRAW_MIDDLE_TEXT|
+                                                    SM.SM_DRAW_SECONDARY_TICKS, pos=(0, 0), size=(350, 250))
+
+        # Set The Region Of Existence Of SpeedMeter (Always In Radians!!!!)
+        self.alt.SetAngleRange(-pi, pi)
+
+        # Create The Intervals That Will Divide Our SpeedMeter In Sectors
+        intervals = range(0, 11, 1)
+        self.alt.SetIntervals(intervals)
+
+        # Assign The Same Colours To All Sectors (We Simulate A Car Control For Speed)
+        # Usually This Is Black
+        colours = [wx.BLACK]*10
+        self.alt.SetIntervalColours(colours)
+
+        # Assign The Ticks: Here They Are Simply The String Equivalent Of The Intervals
+        ticks = [str(interval) for interval in intervals]
+        self.alt.SetTicks(ticks)
+        # Set The Ticks/Tick Markers Colour
+        self.alt.SetTicksColour(wx.WHITE)
+        # We Want To Draw 5 Secondary Ticks Between The Principal Ticks
+        self.alt.SetNumberOfSecondaryTicks(5)
+
+        # Set The Font For The Ticks Markers
+        self.alt.SetTicksFont(wx.Font(7, wx.SWISS, wx.NORMAL, wx.NORMAL))
+
+        # Set The Text In The Center Of SpeedMeter
+        self.alt.SetMiddleText("0")
+        # Assign The Colour To The Center Text
+        self.alt.SetMiddleTextColour(wx.WHITE)
+        # Assign A Font To The Center Text
+        self.alt.SetMiddleTextFont(wx.Font(10, wx.SWISS, wx.NORMAL, wx.BOLD))
+
+        # Set The Colour For The Hand Indicator
+        self.alt.SetHandColour(wx.Colour(255, 255, 0))
+
+        # Do Not Draw The External (Container) Arc. Drawing The External Arc May
+        # Sometimes Create Uglier Controls. Try To Comment This Line And See It
+        # For Yourself!
+        self.alt.DrawExternalArc(False)
+
+        # Set The Current Value For The SpeedMeter
+        self.alt.SetSpeedValue(0)
+
+        #zegar led pokazujacy czas lotu
+        self.led = gizmos.LEDNumberCtrl(self.panel1, -1, pos=(10, 30), size=(350, 80), style=gizmos.LED_ALIGN_LEFT)
         # default colours are green on black
         self.led.SetBackgroundColour("black")
         self.led.SetForegroundColour("yellow")
-        self.on_timer(None)
+        #self.on_timer(None)
         self.timer = wx.Timer(self, -1)
         # update clock digits every second (1000ms)
         self.timer.Start(1000)
-        self.Bind(wx.EVT_TIMER, self.on_timer)
-        #self.Centre()
+        MyFrame.start_flight(self, time.time())
+        self.Bind(wx.EVT_TIMER, self.since_start)
+
+        #wywolanie obiektu plane i wystartowanie jako watku, czyli wlaczenie symulatoa
+        self.plane = Plane(self, saver)
+        self.plane.start()
 
     def change_speed(self, sp):
-        self.speed = sp
+        """
+        Funkcja zmianiajaca predkosc
+        :param sp: predkosc ktora chcemy ustawic
+        :return:
+        """
+        self.speed.SetSpeedValue(sp)
+        self.panel2.Layout()
 
-    def on_timer(self, event):
-        # get current time from computer
-        current = time.localtime(time.time())
+    def change_alt(self, alt):
+        """
+        Funkcja zmianiajaca wysokosc
+        :param alt: wysokosc ktora chcemy ustawic
+        :return:
+        """
+        wys = int(alt/10)
+        self.alt.SetSpeedValue(alt - wys*10)
+        self.alt.SetMiddleText(str(wys) + "m")
+        self.panel3.Layout()
+
+    def since_start(self, event):
+        """
+        funkcja ustawia na zegarze czas ktory minal od wywolania funkcji start_flight()
+        :param event:
+        :return:
+        """
+        #dodane 82800 bo to jest 23h *3600 sec, czas w pythonie dziala dziwnie, i przy odejmowaniu
+        #czasu terazniejszego od poczatkowego dodawal godzine
+        current = time.localtime(time.time() - self.start_flight_time +82800 )
         # time string can have characters 0..9, -, period, or space
         ts = time.strftime("%H %M %S", current)
         self.led.SetValue(ts)
 
+    def start_flight(self, time_str):
+        """
+        Funkcja ustawie czas poczatku lotu ktory jest potrzebny do obliczenia trwania lotu
+        :param time_str:
+        :return:
+        """
+        self.start_flight_time = time_str
 
-app = wx.App()
-frame = MyFrame(None)
-app.SetTopWindow(frame)
-frame.Show()
+    @staticmethod
+    def show_gui(saver):
+        """
+        Metoda statyczna do uruchamiania gui
+        :param saver: obiekt zapisujacy klasy DataSaver
+        :return:
+        """
+        app = wx.App()
+        frame = MyFrame(None, saver)
+        app.SetTopWindow(frame)
+        frame.Show()
+        app.MainLoop()
+        return frame
 
-app.MainLoop()
+    def get_plane(self):
+        """
+        Zwraca obiekt symulatora samolotu, zeby mozna bylo z niego pobierac dane
+        :return: obiekt symulatora samolotu
+        """
+        return self.plane

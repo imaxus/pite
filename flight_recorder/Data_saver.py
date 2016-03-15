@@ -1,5 +1,5 @@
 class DataSaver:
-    def __init__(self,conn):
+    def __init__(self, conn):
         """
         :param cur: polaczenie do bazy danych
         :return: void

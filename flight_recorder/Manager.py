@@ -1,5 +1,10 @@
 import psycopg2
 from Data_saver import DataSaver
+from Drawer import MyFrame
+from airplane_simulator import Plane
+import wx
+import threading
+from threading import Thread
 
 try:
     conn = psycopg2.connect("dbname='pg23138_flight_recorder' user='pg23138_flight_recorder'"
@@ -10,8 +15,7 @@ except:
 
 #stworzenie obiektu zapisujacego
 saver = DataSaver(conn)
-
-data = [1, 2.15, 0.1, 3, 4, 99]
-saver.save_data(data)
+#wywolanie gui
+gui = MyFrame.show_gui(saver)
 
 #dodac czas lotu i jakos emulowac predkosc
