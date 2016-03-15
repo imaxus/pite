@@ -29,12 +29,12 @@ class MyFrame(wx.Frame):
         self.speed.SetAngleRange(-pi/6, 7*pi/6)
 
         # Create The Intervals That Will Divide Our SpeedMeter In Sectors
-        intervals = range(0, 401, 20)
+        intervals = range(0, 901, 50)
         self.speed.SetIntervals(intervals)
 
         # Assign The Same Colours To All Sectors (We Simulate A Car Control For Speed)
         # Usually This Is Black
-        colours = [wx.BLACK]*20
+        colours = [wx.BLACK]*18
         self.speed.SetIntervalColours(colours)
 
         # Assign The Ticks: Here They Are Simply The String Equivalent Of The Intervals
@@ -144,7 +144,7 @@ class MyFrame(wx.Frame):
         """
         wys = int(alt/10)
         self.alt.SetSpeedValue(alt - wys*10)
-        self.alt.SetMiddleText(str(wys) + "m")
+        self.alt.SetMiddleText(str(int(alt)) + "m")
         self.panel3.Layout()
 
     def since_start(self, event):

@@ -1,3 +1,6 @@
+import psycopg2
+
+
 class DataSaver:
     def __init__(self, conn):
         """
@@ -56,3 +59,17 @@ class DataSaver:
 
     def save_fuel(self, ful):
         self.fuel = ful
+
+    @staticmethod
+    def connect_to_db():
+        try:
+            conn = psycopg2.connect("dbname='pg23138_flight_recorder' user='pg23138_flight_recorder'"
+                                    " host='23138.p.tld.pl' password='flight4Reco'")
+        except:
+            print "I am unable to connect to the database"
+            quit()
+        return conn
+
+    @staticmethod
+    def debug_mode_no_internet():
+        return 0

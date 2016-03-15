@@ -10,7 +10,7 @@ class Plane(threading.Thread):
         self.velocity = 0
         self.height = 0
         self.angle = 0
-        self.acceleration = 1.44 #m/s^2
+        self.acceleration = 0.3 #m/s^2 bylo 1.44
         self.timeStart = None
         self.timeStop = 0
         self.velocity_p = 0
@@ -19,6 +19,10 @@ class Plane(threading.Thread):
         self.timeTakeOFF = 0
         self.distanceRunway = 0
         self.flying = False
+        #okresla co ile dokonujemy sprawdzenia wartosci i ich zmiany
+        self.second_factor = 0.2
+        #wspolczynnik przyspieszenia, im szybciej lecimy tym wolniej przyspieszamy
+        self.acc_factor = 1.1
         #obiekt gui potrzebny do przekazania argumentow w celu zmiany wartosci
         #musi tak byc bo to jest obiekt watku i w przypadku proby wywolania w glownym watku bedzie czekac na zakonczenie
         #dzialania symulatora
@@ -43,29 +47,30 @@ class Plane(threading.Thread):
             while self.flying:
                 self.upvelocity()
                 self.upDistance()
-                self.up_height()
                 speed = self.velocity * 3.6
                 self.drawer.change_speed(speed)
                 self.drawer.change_alt(self.height)
-                self.saver.save_data([speed, self.height, 0, 0, 0, 0])
+                #self.saver.save_data([speed, self.height, 0, 0, 0, 0])
                 if self.takeoff == False:
                     self.ifTakeOFF()
                 else:
                     self.FlihtMode()
-                time.sleep(0.2)
+                time.sleep(self.second_factor)
         except KeyboardInterrupt:
             print "Ewakuacja, lot odwolany"
 
     def ifTakeOFF(self):
-        if self.velocity > 80:
+        if self.velocity > 40:
             if self.takeoff == False:
                 print "Samolot wystartowal"
             self.takeoff = True
             self.timeTakeOFF = time.time()
 
     def upvelocity(self):
-        if self.velocity*3.6 < 900:
-            self.velocity = self.velocity_p + self.acceleration*(time.time() - self.timeStart)*0.2
+        if self.velocity*3.6 < 700:
+            self.up_acc()
+            print self.acceleration
+            self.velocity = self.velocity_p + self.acceleration*(time.time() - self.timeStart)*self.second_factor
 
     def upDistance(self):
         if self.takeoff == False:
@@ -74,9 +79,13 @@ class Plane(threading.Thread):
             self.distance += self.velocity*math.cos(math.radians(self.angle))
 
     def FlihtMode(self):
-        if (self.height < 2000) & (self.angle < 40):
-            self.angle += 0.1
-        self.height += self.velocity*math.sin(math.radians(self.angle))
+        if (self.height < 4000) and (self.angle < 30) and self.velocity < 100:
+            self.angle += 0.3
+        if (self.height < 4000) and (self.angle < 30) and self.velocity >= 100:
+            self.angle -= 0.2
+        if self.height > 4000:
+            self.angle = 0
+        self.height += self.second_factor*(self.angle/10)
 
     def getTime(self):
         return time.time() - self.timeStart
@@ -93,8 +102,14 @@ class Plane(threading.Thread):
         print 'height ',self.height
         print 'Kat wznoszenia',self.angle
 
-    def up_height(self):
-        #60 metrow na minute to srednia predkosc wznoszenia sie boeinga 737
-        if self.velocity*3.6 > 40:
-            # bo 60 metrow na minute wiec 1 m na sek, a sprawdzamy co 0.2
-            self.height += 0.2
+    #def up_height(self):
+     #   #60 metrow na minute to srednia predkosc wznoszenia sie boeinga 737
+      #  if self.velocity*3.6 > 120 and self.height < 10000:
+       #     # bo 60 metrow na minute wiec 1 m na sek, a sprawdzamy co second_factor wiec tak tez ustawiamy
+        #    self.height += self.second_factor
+
+    def up_acc(self):
+        if self.acceleration < 9.0 and self.velocity < 65:
+            self.acceleration += 0.15
+        #if self.velocity > 75 and self.acceleration > 3.0:
+         #   self.acceleration -= 0.1
