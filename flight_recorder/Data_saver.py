@@ -33,7 +33,7 @@ class DataSaver:
             statement = 'INSERT INTO flight (speed,alt,climb,direction,banking,fuel) ' \
                         'VALUES (%s, %s, %s, %s, %s, %s);' % \
                         (self.speed, self.alt, self.climb, self.direction, self.banking, self.fuel)
-            print statement
+            #print statement
             cur.execute(statement)
             self.conn.commit()
             cur.close()

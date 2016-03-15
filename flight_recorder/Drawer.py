@@ -15,15 +15,17 @@ class MyFrame(wx.Frame):
         self.panel1 = wx.Panel(self, -1, style=wx.SUNKEN_BORDER, size=(400, 300))
         self.panel2 = wx.Panel(self, -1, style=wx.SUNKEN_BORDER, pos=(400, 0), size=(400, 300))
         self.panel3 = wx.Panel(self, -1, style=wx.SUNKEN_BORDER, pos=(0, 300), size=(400, 300))
+        self.panel4 = wx.Panel(self, -1, style=wx.SUNKEN_BORDER, pos=(400, 300), size=(400, 300))
         self.panel1.SetBackgroundColour("LIGHT GREY")
         self.panel2.SetBackgroundColour("LIGHT GREY")
         self.panel3.SetBackgroundColour("LIGHT GREY")
+        self.panel4.SetBackgroundColour("LIGHT GREY")
         box = wx.BoxSizer(wx.VERTICAL)
         box.Add(self.panel1, 2, wx.EXPAND)
         box.Add(self.panel2, 1, wx.EXPAND)
         #predkosciomierz
         self.speed = SM.SpeedMeter(self.panel2, agwStyle=SM.SM_DRAW_HAND|SM.SM_DRAW_SECTORS|SM.SM_DRAW_MIDDLE_TEXT|
-                                                    SM.SM_DRAW_SECONDARY_TICKS, pos=(0, 30), size=(400, 300))
+                                                         SM.SM_DRAW_SECONDARY_TICKS, pos=(0, 30), size=(400, 300))
 
         # Set The Region Of Existence Of SpeedMeter (Always In Radians!!!!)
         self.speed.SetAngleRange(-pi/6, 7*pi/6)
@@ -68,7 +70,7 @@ class MyFrame(wx.Frame):
 
         #wysokosciomierz
         self.alt = SM.SpeedMeter(self.panel3, agwStyle=SM.SM_DRAW_HAND|SM.SM_DRAW_SECTORS|SM.SM_DRAW_MIDDLE_TEXT|
-                                                    SM.SM_DRAW_SECONDARY_TICKS, pos=(0, 0), size=(350, 250))
+                                                       SM.SM_DRAW_SECONDARY_TICKS, pos=(0, 0), size=(350, 250))
 
         # Set The Region Of Existence Of SpeedMeter (Always In Radians!!!!)
         self.alt.SetAngleRange(-pi, pi)
@@ -111,6 +113,52 @@ class MyFrame(wx.Frame):
         # Set The Current Value For The SpeedMeter
         self.alt.SetSpeedValue(0)
 
+
+        #kompass
+        self.com = SM.SpeedMeter(self.panel4, agwStyle=SM.SM_DRAW_HAND|SM.SM_DRAW_SECTORS|SM.SM_DRAW_MIDDLE_TEXT|
+                                                       SM.SM_DRAW_SECONDARY_TICKS, pos=(0, 0), size=(350, 250))
+
+        # Set The Region Of Existence Of SpeedMeter (Always In Radians!!!!)
+        self.com.SetAngleRange(-pi, pi)
+
+        # Create The Intervals That Will Divide Our SpeedMeter In Sectors
+        intervals = range(0, 9, 1)
+        self.com.SetIntervals(intervals)
+
+        # Assign The Same Colours To All Sectors (We Simulate A Car Control For Speed)
+        # Usually This Is Black
+        colours = [wx.BLACK]*8
+        self.com.SetIntervalColours(colours)
+
+        # Assign The Ticks: Here They Are Simply The String Equivalent Of The Intervals
+        ticks = ["W", "WS", "N", "NE", "E", "EW", "S", "SN", ""]
+        self.com.SetTicks(ticks)
+        # Set The Ticks/Tick Markers Colour
+        self.com.SetTicksColour(wx.GREEN)
+        # We Want To Draw 5 Secondary Ticks Between The Principal Ticks
+        self.com.SetNumberOfSecondaryTicks(2)
+
+        # Set The Font For The Ticks Markers
+        self.com.SetTicksFont(wx.Font(7, wx.SWISS, wx.NORMAL, wx.NORMAL))
+
+        # Set The Text In The Center Of SpeedMeter
+        self.com.SetMiddleText("")
+        # Assign The Colour To The Center Text
+        self.com.SetMiddleTextColour(wx.WHITE)
+        # Assign A Font To The Center Text
+        self.com.SetMiddleTextFont(wx.Font(10, wx.SWISS, wx.NORMAL, wx.BOLD))
+
+        # Set The Colour For The Hand Indicator
+        self.com.SetHandColour(wx.Colour(255, 0, 0))
+
+        # Do Not Draw The External (Container) Arc. Drawing The External Arc May
+        # Sometimes Create Uglier Controls. Try To Comment This Line And See It
+        # For Yourself!
+        self.com.DrawExternalArc(False)
+
+        # Set The Current Value For The SpeedMeter
+        self.com.SetSpeedValue(2)
+
         #zegar led pokazujacy czas lotu
         self.led = gizmos.LEDNumberCtrl(self.panel1, -1, pos=(10, 30), size=(350, 80), style=gizmos.LED_ALIGN_LEFT)
         # default colours are green on black
@@ -126,6 +174,15 @@ class MyFrame(wx.Frame):
         #wywolanie obiektu plane i wystartowanie jako watku, czyli wlaczenie symulatoa
         self.plane = Plane(self, saver)
         self.plane.start()
+
+    def change_dir(self, dir):
+        """
+        Funkcja zmianiajaca kierunek
+        :param dir: kierunek ktory chcemy ustawic
+        :return:
+        """
+        self.com.SetSpeedValue(dir)
+        self.panel4.Layout()
 
     def change_speed(self, sp):
         """
