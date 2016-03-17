@@ -31,7 +31,7 @@ class Buffer:
         """
         self.set_time(data[0])
         self.set_longitude(data[1])
-        self.set_latitude(data[2])
+        self.set_altitude(data[2])
         self.set_alt(data[3])
         self.set_roll(data[4])
         self.set_pitch(data[5])
@@ -45,7 +45,7 @@ class Buffer:
         self.lo[0] = lo
         self.lo[1] = 1
 
-    def set_latitude(self, la):
+    def set_altitude(self, la):
         self.la[0] = la
         self.la[1] = 1
 
