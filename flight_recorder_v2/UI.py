@@ -261,7 +261,7 @@ class MainWindow(QtGui.QWidget):
             fig = self.visualizer.altitude_time(False)
             self.tab_alt = QtGui.QWidget()
             self.tab_alt.setObjectName(_fromUtf8("dst"))
-            self.tabWidget.addTab(self.tab_alt, _fromUtf8("DWysokość"))
+            self.tabWidget.addTab(self.tab_alt, _fromUtf8("Wysokość"))
             self.tabWidget.setCurrentWidget(self.tab_alt)
             layout = QtGui.QVBoxLayout()
             layout.addWidget(FigureCanvasQTAgg(fig))

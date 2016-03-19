@@ -36,6 +36,7 @@ class PlotCreator:
         plt.savefig("img/alt.png")
         if show_or_not:
             plt.show()
+        plt.close()
         return fig
 
     def position_time(self, show_or_not):
@@ -64,6 +65,7 @@ class PlotCreator:
         plt.savefig("img/pitch.png")
         if show_or_not:
             plt.show()
+        plt.close()
         return fig
 
     def roll_time(self, show_or_not):
@@ -76,6 +78,7 @@ class PlotCreator:
         plt.savefig("img/roll.png")
         if show_or_not:
             plt.show()
+        plt.close()
         return fig
 
     def dst_accu_time(self, show_or_not):
@@ -89,6 +92,7 @@ class PlotCreator:
         plt.savefig("img/dst.png")
         if show_or_not:
             plt.show()
+        plt.close()
         return fig
 
     def dst_time(self, show_or_not):
@@ -102,6 +106,7 @@ class PlotCreator:
         plt.savefig("img/dst_accu.png")
         if show_or_not:
             plt.show()
+        plt.close()
         return fig
 
     def speed_time(self, show_or_not):
@@ -115,6 +120,7 @@ class PlotCreator:
         plt.savefig("img/speed.png")
         if show_or_not:
             plt.show()
+        plt.close()
         return fig
 
     def acceleration_time(self, show_or_not):
@@ -128,4 +134,5 @@ class PlotCreator:
         plt.savefig("img/acceleration.png")
         if show_or_not:
             plt.show()
+        plt.close()
         return fig
