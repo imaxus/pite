@@ -9,7 +9,8 @@ class PlotCreator:
     """
     def __init__(self, data, time_interval):
         """
-
+        Przy kazdej funkcji nalezy w argumencie podac True jesli chcemy zeby wyswietlila plot
+        i False jesli chcemy tylko obiekt pyplot.figure np do wyswietlenia w oknie pyqt
         :param data: dane z pliku .txt zapisanego przez program
         :param time_interval: interwal czasowy - jednostka czasu
         :return:
@@ -87,22 +88,28 @@ class PlotCreator:
         plt.savefig("img/dst_accu.png")
         plt.show()
 
-    def speed_time(self):
+    def speed_time(self, show_or_not):
         speed = DataOperation.speed(self.data, self.time_interval)
+        fig = plt.figure(2)
         plt.plot(self.time[1:], speed)
         plt.xlabel('time (s)')
         plt.ylabel('ppredkosc (km/h)')
         plt.title('Predkosc w czasie')
         plt.grid(True)
         plt.savefig("img/speed.png")
-        plt.show()
+        if show_or_not:
+            plt.show()
+        return fig
 
-    def acceleration_time(self):
+    def acceleration_time(self, show_or_not):
         acc = DataOperation.acceleration(self.data, self.time_interval)
+        fig = plt.figure(1)
         plt.plot(self.time[1:], acc)
         plt.xlabel('time (s)')
         plt.ylabel('pprzyspieszenie (m/s)')
         plt.title('Przyspieszenie w czasie')
         plt.grid(True)
         plt.savefig("img/acceleration.png")
-        plt.show()
+        if show_or_not:
+            plt.show()
+        return fig

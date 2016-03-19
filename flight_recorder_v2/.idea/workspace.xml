@@ -35,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/Buffer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/Manager.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+              <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -56,9 +56,11 @@
       <file leaf-file-name="UI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6363636">
-              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-              <folding />
+            <state vertical-scroll-proportion="0.67281103">
+              <caret line="180" column="44" selection-start-line="180" selection-start-column="44" selection-end-line="180" selection-end-column="44" />
+              <folding>
+                <element signature="e#24#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/FileSaver.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/PlotCreator.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -102,22 +104,6 @@
               <caret line="97" column="60" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-                <marker date="1458383532067" expanded="true" signature="86:4240" placeholder="..." />
-                <marker date="1458383532067" expanded="true" signature="117:142" placeholder="..." />
-                <marker date="1458383532067" expanded="true" signature="203:539" placeholder="..." />
-                <marker date="1458383532067" expanded="true" signature="212:418" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1458383532067" expanded="true" signature="600:878" placeholder="..." />
-                <marker date="1458383532067" expanded="true" signature="609:802" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1458383532067" expanded="true" signature="924:1640" placeholder="..." />
-                <marker date="1458383532067" expanded="true" signature="933:1148" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1458383532067" expanded="true" signature="1689:2507" placeholder="..." />
-                <marker date="1458383532067" expanded="true" signature="1698:1883" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1458383532067" expanded="true" signature="2564:2999" placeholder="..." />
-                <marker date="1458383532067" expanded="true" signature="2573:2769" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1458383532067" expanded="true" signature="3054:3629" placeholder="..." />
-                <marker date="1458383532067" expanded="true" signature="3063:3348" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1458383532067" expanded="true" signature="3690:4240" placeholder="..." />
-                <marker date="1458383532067" expanded="true" signature="3699:3967" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
               </folding>
             </state>
           </provider>
@@ -149,12 +135,12 @@
       <list>
         <option value="$PROJECT_DIR$/InputValidator.py" />
         <option value="$PROJECT_DIR$/CSVReader.py" />
-        <option value="$PROJECT_DIR$/FileSaver.py" />
         <option value="$PROJECT_DIR$/DataOperation.py" />
-        <option value="$PROJECT_DIR$/PlotCreator.py" />
         <option value="$PROJECT_DIR$/DBSaver.py" />
-        <option value="$PROJECT_DIR$/Buffer.py" />
         <option value="$PROJECT_DIR$/gui.py" />
+        <option value="$PROJECT_DIR$/Buffer.py" />
+        <option value="$PROJECT_DIR$/PlotCreator.py" />
+        <option value="$PROJECT_DIR$/FileSaver.py" />
         <option value="$PROJECT_DIR$/Manager.py" />
         <option value="$PROJECT_DIR$/UI.py" />
       </list>
@@ -163,8 +149,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -192,7 +178,11 @@
     </navigator>
     <panes />
   </component>
-  <component name="RunManager" selected="Python.Manager">
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RunManager" selected="Python.UI">
     <configuration default="false" name="Manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -223,6 +213,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="flight_recorder_v2" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FileSaver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="UI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flight_recorder_v2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -349,14 +356,16 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.Manager" />
       <item index="1" class="java.lang.String" itemvalue="Python.FileSaver" />
+      <item index="2" class="java.lang.String" itemvalue="Python.UI" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.Manager" />
-        <item index="1" class="java.lang.String" itemvalue="Python.FileSaver" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.UI" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Manager" />
+        <item index="2" class="java.lang.String" itemvalue="Python.FileSaver" />
       </list>
     </recent_temporary>
   </component>
@@ -374,15 +383,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17970401" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27129337" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -436,6 +445,104 @@
     <entry file="file://$PROJECT_DIR$/DBSaver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buffer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FileSaver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PlotCreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InputValidator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="88" selection-start-line="14" selection-start-column="88" selection-end-line="14" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataOperation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="60" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSVReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBSaver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Buffer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBSaver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1" column="53" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
           <folding />
         </state>
@@ -483,22 +590,6 @@
           <caret line="98" column="60" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1458383532067" expanded="true" signature="86:4240" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="117:142" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="203:539" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="212:418" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="600:878" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="609:802" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="924:1640" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="933:1148" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="1689:2507" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="1698:1883" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="2564:2999" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="2573:2769" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="3054:3629" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="3063:3348" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="3690:4240" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="3699:3967" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
           </folding>
         </state>
       </provider>
@@ -561,22 +652,6 @@
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1458383532067" expanded="true" signature="86:4240" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="117:142" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="203:539" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="212:418" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="600:878" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="609:802" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="924:1640" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="933:1148" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="1689:2507" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="1698:1883" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="2564:2999" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="2573:2769" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="3054:3629" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="3063:3348" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="3690:4240" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="3699:3967" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
           </folding>
         </state>
       </provider>
@@ -661,10 +736,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/Pliki tymczasowe ssd/TEMP/lines3d_demo.py">
+    <entry file="file://$PROJECT_DIR$/DBSaver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25247526">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -674,22 +750,6 @@
           <caret line="97" column="60" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1458383532067" expanded="true" signature="86:4240" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="117:142" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="203:539" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="212:418" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="600:878" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="609:802" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="924:1640" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="933:1148" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="1689:2507" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="1698:1883" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="2564:2999" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="2573:2769" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="3054:3629" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="3063:3348" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1458383532067" expanded="true" signature="3690:4240" placeholder="..." />
-            <marker date="1458383532067" expanded="true" signature="3699:3967" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
           </folding>
         </state>
       </provider>
@@ -704,14 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBSaver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/InputValidator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -720,10 +772,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Buffer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PlotCreator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -733,42 +803,18 @@
     <entry file="file://$PROJECT_DIR$/FileSaver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Buffer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25">
-          <caret line="11" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6363636">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding />
+        <state vertical-scroll-proportion="0.67281103">
+          <caret line="180" column="44" selection-start-line="180" selection-start-column="44" selection-end-line="180" selection-end-column="44" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

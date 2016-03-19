@@ -14,8 +14,20 @@ class FileSaver:
             self.file_name = temp_str
 
     def save_data(self, data):
+        """
+        Funkcja zapisujaca jedna linijke do pliku w formacie csv
+        :param data: lista lub tablica
+        :return:
+        """
         with open(self.file_name, "a") as f:
             #funkcja map zamienia wszystko na stringi a cale wyrazenie powoduje zapisanie wartosci z tablicy jako ciag
             # stringow oddzielony ","
             text_to_save = ','.join(map(str, data))+"\n"
             f.write(text_to_save)
+
+    def get_file_name(self):
+        """
+        Potrzebne bo inicjalizacja klasy moze zmienic podana nazwe pliku na inna gdy podana jest zajeta
+        :return: nazwa pliku gdzie zostaly zapisane dane
+        """
+        return self.file_name

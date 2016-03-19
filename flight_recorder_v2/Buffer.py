@@ -1,4 +1,6 @@
 import time
+
+
 class Buffer:
     """
     Klasa buforowa dla danych dostarczanych z "samolotu",
