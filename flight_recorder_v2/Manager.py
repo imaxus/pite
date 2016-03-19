@@ -4,6 +4,9 @@ from CSVReader import CsvReader
 from InputValidator import InputValidator
 from DataOperation import DataOperation
 from PlotCreator import PlotCreator
+from UI import Ui_FlightRecorder
+from PyQt4 import QtCore, QtGui
+import sys
 
 #przeplyw danych csvReader -> podzial na wiersze -> buffer -> InputValidation - >fileSaver
 #utworzenie bufora
@@ -32,6 +35,10 @@ r_data = CsvReader.read_from_file("saved_data/dane.txt")
 
 #tworzymy wizualizator, drugi parametr do interwal czasowy
 visualizer = PlotCreator(r_data, 1)
+app = QtGui.QApplication(sys.argv)
+ex = Ui_FlightRecorder()
+ex.show()
+sys.exit(app.exec_())
 #isualizer.acceleration_time()
 #visualizer.speed_time()
 #visualizer.dst_time()

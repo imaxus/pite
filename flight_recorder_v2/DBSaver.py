@@ -1,5 +1,6 @@
 import psycopg2
-#TODO: przerobic tak zeby obsługiwał odpowiednie dane
+#TODO: przerobic tak zeby obslugiwal odpowiednie dane
+
 
 class DataSaver:
     """
@@ -68,7 +69,7 @@ class DataSaver:
     @staticmethod
     def connect_to_db():
         """
-        funkcja tworząca połączenie z baza danych
+        funkcja tworzaca polaczenie z baza danych
         :return: obiekt  psycopg2.connect
         """
         try:

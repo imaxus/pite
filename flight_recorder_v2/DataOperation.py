@@ -45,7 +45,7 @@ class DataOperation:
         for row in data_array[1:]:
             a = (row[1] - alo) * math.cos(ala*math.pi/180.0)
             b = (row[2] - ala)
-            delta[count] = math.sqrt(a*a + b*b)*math.pi*earth_r/36.0*100# wynik w km
+            delta[count] = math.sqrt(a*a + b*b)*math.pi*earth_r/36.0*100# wynik w m
             count += 1
             alo = row[1]
             ala = row[2]

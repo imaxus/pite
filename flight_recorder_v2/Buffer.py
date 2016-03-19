@@ -37,8 +37,8 @@ class Buffer:
         self.set_pitch(data[5])
         self.set_heading(data[6])
 
-    def set_time(self, time):
-        self.time[0] = time
+    def set_time(self, timex):
+        self.time[0] = timex
         self.time[1] = 1
 
     def set_longitude(self, lo):
