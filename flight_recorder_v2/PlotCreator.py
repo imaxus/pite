@@ -26,16 +26,19 @@ class PlotCreator:
         self.heading = data[:, 6]
         self.time_interval =  time_interval
 
-    def altitude_time(self):
+    def altitude_time(self, show_or_not):
+        fig = plt.figure()
         plt.plot(self.time, self.alt)
         plt.xlabel('time (s)')
         plt.ylabel('wysokosc (m n.p.m)')
         plt.title('Zmiany wysokosci')
         plt.grid(True)
         plt.savefig("img/alt.png")
-        plt.show()
+        if show_or_not:
+            plt.show()
+        return fig
 
-    def position_time(self):
+    def position_time(self, show_or_not):
         mpl.rcParams['legend.fontsize'] = 10
         fig = plt.figure()
         ax = fig.gca(projection='3d')
@@ -47,50 +50,63 @@ class PlotCreator:
         ax.legend()
         plt.title('Trasa samolotu')
         plt.savefig("img/path.png")
-        plt.show()
+        if show_or_not:
+            plt.show()
+        return fig
 
-    def pitch_time(self):
+    def pitch_time(self, show_or_not):
+        fig = plt.figure()
         plt.plot(self.time, self.pitch)
         plt.xlabel('time (s)')
         plt.ylabel('kat wznoszenia (stopnie)')
         plt.title('Zmiany kata wznoszenia')
         plt.grid(True)
         plt.savefig("img/pitch.png")
-        plt.show()
+        if show_or_not:
+            plt.show()
+        return fig
 
-    def roll_time(self):
+    def roll_time(self, show_or_not):
+        fig = plt.figure()
         plt.plot(self.time, self.roll)
         plt.xlabel('time (s)')
         plt.ylabel('przechyl boczny (stopnie) lewo<--->prawo')
         plt.title('Zmiany przechylu')
         plt.grid(True)
         plt.savefig("img/roll.png")
-        plt.show()
+        if show_or_not:
+            plt.show()
+        return fig
 
-    def dst_time(self):
+    def dst_accu_time(self, show_or_not):
         dst = DataOperation.geo_m(self.data)
-
+        fig = plt.figure()
         plt.plot(self.time[1:], dst)
         plt.xlabel('time (s)')
         plt.ylabel('pokonana odleglosc (km)')
         plt.title('Odleglosc pokonana w danej sekundzie')
         plt.grid(True)
         plt.savefig("img/dst.png")
-        plt.show()
+        if show_or_not:
+            plt.show()
+        return fig
 
-    def dst_accu__time(self):
+    def dst_time(self, show_or_not):
         dst = DataOperation.geo_m_accumulate(self.data)
+        fig = plt.figure()
         plt.plot(self.time[1:], dst)
         plt.xlabel('time (s)')
         plt.ylabel('pokonana odleglosc (m)')
         plt.title('Sumaryczna odleglosc pokonana w czasie')
         plt.grid(True)
         plt.savefig("img/dst_accu.png")
-        plt.show()
+        if show_or_not:
+            plt.show()
+        return fig
 
     def speed_time(self, show_or_not):
         speed = DataOperation.speed(self.data, self.time_interval)
-        fig = plt.figure(2)
+        fig = plt.figure()
         plt.plot(self.time[1:], speed)
         plt.xlabel('time (s)')
         plt.ylabel('ppredkosc (km/h)')
@@ -103,7 +119,7 @@ class PlotCreator:
 
     def acceleration_time(self, show_or_not):
         acc = DataOperation.acceleration(self.data, self.time_interval)
-        fig = plt.figure(1)
+        fig = plt.figure()
         plt.plot(self.time[1:], acc)
         plt.xlabel('time (s)')
         plt.ylabel('pprzyspieszenie (m/s)')
