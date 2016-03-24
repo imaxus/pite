@@ -27,7 +27,7 @@ class DataOperation:
         :param data_array: tablica z wszystkimi danymi z lotu
         :return: tablica z wszystkimi danymi z lotu
         """
-        data_array[:, 3] = data_array[:, 3]/100.0
+        data_array[:, 3] = data_array[:, 3]*0.3048
         return data_array
 
     @staticmethod
