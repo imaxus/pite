@@ -23,7 +23,7 @@ class DataOperation:
     @staticmethod
     def change_altitude_cm_m(data_array):
         """
-        Metoda zamieniajaca wysokosc w cm na wysokosc w metrach
+        Metoda zamieniajaca wysokosc w stopach na wysokosc w metrach
         :param data_array: tablica z wszystkimi danymi z lotu
         :return: tablica z wszystkimi danymi z lotu
         """

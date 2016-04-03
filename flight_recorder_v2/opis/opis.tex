@@ -1,0 +1,60 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{booktabs}
+\selectlanguage{polish}
+\pagestyle{fancy}
+\fancyhead[L]{\textbf{Flight Recorder}}
+\fancyhead[R]{Jakub Serafin }
+\begin{document}
+\section{Opis problemu}
+Problemem do rozwiązania było zaprojektowanie i stworzenie programu symulującego urządzenie zapisujące parametry samolotu podczas lotu, czyli czarnej skrzynki. 
+Problemy do rozwiązania:
+\begin{itemize}
+\item Dane przelotu takie jak:
+	\begin{itemize}
+	\item prędkość
+	\item wysokość
+	\item wychylenia samolotu
+	\item położenie
+	\item przyspieszenie
+	\end{itemize}
+\item Przechwycenie danych,
+\item Zapisanie danych,
+\item Analiza danych,
+\item Interfejs Graficzny
+\end{itemize}
+\section{Rozwiązanie}
+\subsection{Dane przelotu}
+W celu uzyskania danych przelotu samolotu, użyłem symulatora lotu FlightGear w wersji 2016.1.1. Posiada on możliwość zapisania logów do debuggowania. Zapisuje następujące wartości:
+\begin{itemize}
+\item czas od włączenia symulatora
+\item położenie geograficzne - długość i szerokość
+\item wysokość
+\item wychylenia samolotu
+\end{itemize}
+Dane zostały zapisane do pliku w formacie CSV (Comma separated value). Samolot, który został zasymulowany to boeing 737.
+\subsection{Przechywcenie danych}
+W celu przechwycenia danych stworzyłem buffor, który ma możliwość przyjęcia danych zarówno pojedynczo jak i zbiorowo. W bufforze można ustalić, czy podczas odczytu z bufforu program ma czekać na pobranie wszystkich danych, czy wysy łać niepełne oraz ile razy ma sprawdzać, czy napłynęły nowe dane i jak często ma to robić. W celu odczytania danych z pliku stworzyłem klasę CSVReader, która wczytuje cały plik oprócz wiersza nagłówkowego. Dane wejściowe są również w prosty sposób walidowane, w celu wykrycia np. błędu zapisu do buffora bądź błędów odczytu.
+\subsection{Zapisywanie danych}
+Dane zapisuję za pomocą klasy FileSaver. Klasa ta zapisuje po jednej linijce do pliku o nazwie podanej w kodzie programu, jeśli taki plik już istnieje to dodaje na końcu nazwy "copy" i zapisuje dane do tak nazwanego nowego pliku.
+\subsection{Analiza danych}
+W celu analizy i przetworzenia danych stworzyłem klasę DataOperation, której funkcjonalności to :
+\begin{itemize}
+\item Zamiana czasu od początku włączenia symulatora na czas od początku lotu
+\item Zamiana wysokości w stopach na wysokość w metrach
+\item Zamiana współrzędnych geograficznych w czasie na odległość (w metrach) pokonaną w czasie. Są dwa różne algorytmy do wykorzystania.
+\item Obliczenie całkowitej przebytej odległości.
+\item Obliczenie prędkości samolotu.
+\item Obliczenie przyspieszenia.
+\end{itemize}
+\subsection{Interfejs i prezentacja danych}
+Interfejs stworzyłem przy użyciu biblioteki pyqt. Jest on umieszczony w pliku UI.py. Do stworzenia wykresów posłużyłem się biblioteką matplotlib, wykresy są umieszczone w specjalnych zakładkach, które można przesuwać i zamykać. W trakcie działania programu można zmienić dane wejściowe i stworzyć dla nich wykresy co pozwala porównać ze sobą dwa przeloty.
+\end{document}
