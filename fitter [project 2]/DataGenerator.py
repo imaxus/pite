@@ -29,7 +29,7 @@ class DataGenerator:
         self.amplitude = amp
         self.noise = ns
 
-    def generate_data_points(self,func):
+    def generate_data_points(self, func):
         """
         Funkcja generujaca losowe punkty w oparciu o fale sinusoidalna (dzwiek)
         :param func: funkcja ktorej ma uzyc generator
