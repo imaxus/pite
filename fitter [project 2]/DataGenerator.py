@@ -29,10 +29,11 @@ class DataGenerator:
         self.amplitude = amp
         self.noise = ns
 
-    def generate_data_points(self, func):
+    def generate_data_points(self, func, p0):
         """
         Funkcja generujaca losowe punkty w oparciu o fale sinusoidalna (dzwiek)
         :param func: funkcja ktorej ma uzyc generator
+        :param p0: function argument list
         :return: lista punktow w postaci krotki : x_values, y_values
         """
         period = int(self.frame_rate / self.frequency)
@@ -40,9 +41,9 @@ class DataGenerator:
         datax = [(2.0*math.pi*float(self.frequency)*(float(i % period)/float(self.frame_rate)) + self.offset)
                  for i in xrange(period)]
         #powielamy jeden okres razy zadana ilosc okresow "+(i/period)*2.0*math.pi" jest przesunieciem
-        datax = [datax[i % period]+(i/period)*2.0*math.pi for i in range(period * self.number_data_points)]
+        datax = [datax[i % period]+(i/period)*2.0*math.pi for i in range(int(period * self.number_data_points))]
         # szum dodany dwa razy zeby i wartosci x'owe i y'owe sie zmienialy
-        datay = [float(self.amplitude) * func(x + self.white_noise())+self.white_noise() for x in datax]
+        datay = [float(self.amplitude) * func(x + self.white_noise(), *p0)+self.white_noise() for x in datax]
         return datax, datay
 
     def white_noise(self):

@@ -2,7 +2,7 @@ from scipy.optimize import curve_fit
 
 class Fitter:
     @staticmethod
-    def fit(func, p0, data):
+    def fit(func, data, p0):
         """
         Funkcja fittujaca krzywa do danych
         :param func: funkcja przyjmujaca 4 argumenty (x, freq, amplitude, phase, offset)
