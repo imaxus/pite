@@ -1,11 +1,12 @@
 from DataGenerator import DataGenerator
 from Plotter import Plotter
 from Fitter import Fitter
+from StatAnalyser import StatAnalyser
 import math
 import numpy as np
 import scipy as sy
 
-if int(raw_input("Jesli chcesz domysle wartosci -1, jesli nie -2\n")) == 1:
+if int(raw_input("Jesli chcesz domysle wartosci -1, jesli nie -2\n")) == 2:
     per = float(raw_input("podaj liczbe okresow\n"))
     fr = float(raw_input("podaj frame_rate\n"))
     fq = float(raw_input("podaj czestotliwosc\n"))
@@ -54,8 +55,12 @@ data_points = generator.generate_data_points(gen_func, p0)
 fit_data_y = Fitter.fit(fit_func, data_points, p1)
 fit_data = [data_points[0], fit_data_y]
 
+chi, nchi = StatAnalyser.chi2(data_points[1], fit_data_y, len(p1))
+print "wartosc testu chi^2: ", chi, "znormalizowana wartosc chi: ", nchi, "\n"
 plot = Plotter()
 plot.plot_data_points(data_points)
 plot.plot_fit_curve(fit_data)
 plot.show_plot()
+
+
 
