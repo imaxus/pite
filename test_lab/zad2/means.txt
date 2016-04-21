@@ -1,0 +1,4 @@
+Row 1 mean value is -0.143402244649
+Row 2 mean value is -1.05633270517
+Row 3 mean value is 0.131858403574
+Row 4 mean value is -0.00124023194276
